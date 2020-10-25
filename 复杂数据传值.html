@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name) {
+            this.name = name;
+        }
+
+        function f1(x) {
+            console.log(x.name);
+            x.name = 'mike';
+            console.log(x.name);
+        }
+        var p = new Person('lucy');
+        console.log(p.name); // lucy
+        f1(p); //lucy mike 修改的是地址所以值发生了改变
+        console.log(p.name); //mke
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

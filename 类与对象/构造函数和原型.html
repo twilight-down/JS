@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Start(uname, age) {
+            this.uname = uname;
+            this.age = age;
+
+        }
+
+        Start.prototype.sing = function() {
+            console.log('  i can singing  ');
+
+        }
+
+        var andy = new Start('andy', 16);
+        var anna = new Start('anna', 18);
+        console.log(andy.sing === anna.sing);
+        console.log(andy.__proto__ === Start.prototype); //__proto__（对象的原型）指向构造函数里面的原型对象prototype
+        andy.sing();
+        anna.sing();
+        //一般来说公共属性放在构造函数身上 而公共方法放在原型对象身上
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var num = 1;
+        // fun();
+
+        // function fun() {
+        //     console.log(num);
+        //     var num = 19;
+
+        // }
+
+        // var num;
+
+        // function fun() {
+        //     var num;
+        //     console.log(num)
+        //     num = 19;
+
+        // }
+        // num = 1;
+        // fun();
+        //预解析顺序 所以结果是undefined
+
+
+        //比较重要的案例
+        // f1();
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // function f1() {
+        //     var a = b = c = 2;
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+
+        // }
+        // var a = 2;
+        // b = 2;
+        // c = 2;
+
+
+
+        //11111
+        // function f1() {
+        //     var a = b = c = 2;
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        // }
+        // f1();
+        // console.log(a);
+        // console.log(b);
+        // console.log(c)
+
+        // var obj = {
+        //     uname: 'a',
+        //     age: 19,
+        //     sex: 'unknow',
+        //     sayHi: function() {
+        //         console.log('nihaoya')
+        //     }
+
+        // }
+        // obj.sayHi();
+        // for (k in obj) {
+        //     // console.log(k);
+        //     console.log(obj[k]);
+
+        // }
+
+        function Gfun(name, age, sex, song) { //构造函数创建对象并且遍历对象
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.song = song;
+            this.Hello = function() {
+                console.log('你好啊');
+            }
+        }
+
+        var lili = new Gfun('lili', 'women', '20', 'none')
+        for (k in lili) {
+            if (k != 'Hello' && k != 'name') {
+                console.log(lili[k]);
+            }
+            // console.log(k);
+        }
+        lili.Hello();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

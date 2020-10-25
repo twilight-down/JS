@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象</title>
+    <script>
+        function gettimer() {
+            var myDate = new Date();
+            // console.log(myDate);
+            // console.log(myDate.getFullYear());
+            // console.log(myDate.getMonth() + 1);
+            // console.log(myDate.getDate());
+
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth() + 1;
+            var days = myDate.getDate();
+            var day = myDate.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', ];
+            console.log('今天是' + year + '年' + month + '月' + days + '日 ' + arr[day]);
+        }
+        gettimer();
+        var date = new Date();
+        console.log(date.getTime()); //获取过去的秒数
+        console.log(date.valueOf()); //获取过去的秒数
+        var date1 = +new Date(); //简写的方法 也是获取过去的秒数
+        console.log(date1); //简写的方法 也是获取过去的秒数
+        console.log(Date.now()); //H5新增方法 总的毫秒数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

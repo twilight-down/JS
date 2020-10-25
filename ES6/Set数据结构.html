@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s4 = new Set();
+        s4.add('a').add('b').add('c').add('a'); //筛除重复数组
+        console.log(s4);
+        console.log(s4.size);
+        const s1 = s4.delete('a');
+        console.log(s1, s4);
+        const s2 = s4.has('b');
+        console.log(s2);
+        s4.forEach(value => console.log(value))
+        s4.clear();
+        console.log(s4);
+    </script>
+
+</body>
+
+</html>

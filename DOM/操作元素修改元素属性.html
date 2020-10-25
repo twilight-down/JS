@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id='A'>A</button>
+    <button id='B'>B</button>
+    <img src="../image/A.JPG" alt="" title="A">
+
+
+    <script>
+        //获取元素
+        var a = document.getElementById('A');
+        var b = document.getElementById('B');
+        var img = document.querySelector('img');
+
+        //注册事件
+        b.onclick = function() {
+            img.src = '../image/B.jpg';
+            img.title = "B";
+        }
+        a.onclick = function() {
+            img.src = '../image/A.jpg';
+            img.title = "A";
+
+
+        }
+    </script>
+</body>
+
+</html>

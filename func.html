@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function getSum(start, end) {
+        //     var sum = 0;
+        //     for (var i = start; i <= end; i++) {
+        //         sum += i
+        //     }
+        //     console.log(sum);
+
+        // }
+        // getSum(2, 89)
+        // getSum(1, 100);
+
+
+
+        // function fn() {
+        //     console.log(arguments);
+        // }
+        // fn(1, 2, 3, 5, 7, 'asd');
+
+        function reverse(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i]
+            }
+            return newArr;
+        }
+        var arr1 = reverse([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+        console.log(arr1);
+        var arr2 = reverse(['nike', 'mike', 'mle', 'melo', 'hahha']);
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

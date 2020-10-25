@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //剩余参数
+        const sum = (...args) => {
+            let total = 0;
+            args.forEach(item => total += item);
+            return total;
+        }
+        console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, ));
+        let students = ['andy', 'anna', 'mike', 'milk'];
+        let [si, ...s2] = students;
+        console.log(si);
+        console.log(s2);
+
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        console.log(...arr);
+
+
+        //数组合并
+        let arr1 = [1, 2, 3];
+        let arr2 = [3, 5, 6];
+        let arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+
+        //from 方法将伪数组转化为数组的方法
+        var arrayLike = {
+            "0": "1",
+            "1": "2",
+            "length": "2"
+        }
+        var trueArr = Array.from(arrayLike, x => x + x) //箭头函数==>  (x)={return x+x;}
+        console.log(trueArr);
+
+        //两种方式查找对应的第一个索引号 一个是箭头函数一个是普通函数
+        testArr = [10, 20, 22];
+        var index1 = testArr.findIndex(function(item) {
+            return item > 11;
+        })
+        console.log(index1);
+
+        var index2 = testArr.findIndex(item => item > 11);
+        console.log(index2);
+
+
+        //include方法
+        console.log([1, 2, 3, 4, 5, 6].includes(4));
+        inclArr = [1, 2, 3, 4, 5];
+        defal = inclArr.includes(1);
+        console.log(defal);
+    </script>
+
+</body>
+
+</html>

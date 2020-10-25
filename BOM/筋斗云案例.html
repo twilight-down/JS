@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        body {
+            background-color: palegoldenrod;
+        }
+        
+        .c-nav {
+            position: relative;
+            width: 900px;
+            height: 42px;
+            background: #fff url(../image/rss.png) no-repeat right center;
+            margin: 100px auto;
+            border-radius: 5px;
+        }
+        
+        .c-nav ul {
+            position: absolute;
+        }
+        
+        ul li {
+            float: left;
+            width: 83px;
+            text-align: center;
+            line-height: 42px;
+        }
+        
+        ul li a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            height: 42px;
+        }
+        
+        .c-nav li a:hover {
+            color: peachpuff;
+        }
+        
+        .cloud {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url(../image/cloud.gif) no-repeat;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            //获取元素
+            var cloud = document.querySelector('.cloud');
+            var c_nav = document.querySelector('.c-nav');
+            var lis = c_nav.querySelectorAll('li');
+            var current = 0;
+            //绑定事件
+            for (i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function() {
+                    animate(cloud, this.offsetLeft);
+                });
+                lis[i].addEventListener('mouseleave', function() {
+                    animate(cloud, current);
+                })
+                lis[i].addEventListener('click', function() {
+                    current = this.offsetLeft;
+                })
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="javascrip:;">这里是一</a></li>
+            <li><a href="javascrip:;">这里是二</a></li>
+            <li><a href="javascrip:;">这里是三</a></li>
+            <li><a href="javascrip:;">这里是四</a></li>
+            <li><a href="javascrip:;">这里是五</a></li>
+            <li><a href="javascrip:;">这里是六</a></li>
+            <li><a href="javascrip:;">这里是七</a></li>
+            <li><a href="javascrip:;">这里是八</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

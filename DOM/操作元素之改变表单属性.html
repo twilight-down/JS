@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+    <input type="text " value="please click me ">
+    <script>
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        btn.onclick = function() {
+            input.value = '我被点击了';
+            // input.innerHTML 适用于普通div对input表单不适用
+            btn.disabled = true;
+            this.disabled = true;
+            input.disabled = true;
+        }
+    </script>
+
+
+</body>
+
+</html>

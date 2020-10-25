@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //////replac替换字符 只替换一个
+        var str = 'andyandanna';
+        console.log(str.replace('a', 'b'));
+
+        var str1 = 'andyandanna';
+        while (str1.indexOf('a') !== -1) {
+            str1 = str1.replace('a', 'b');
+        }
+        console.log(str1);
+
+
+        //////字符转化为数组 split('分隔符')
+        var str2 = 'nike,mike,milk,mile';
+        console.log(str2.split(','));
+        var str3 = 'lucy@hana@hamu@miui';
+        console.log(str3.split('@'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

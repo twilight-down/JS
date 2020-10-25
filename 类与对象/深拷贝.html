@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            }
+        }
+
+        var o = {}
+
+        function deepCopy(newObj, oldObj) {
+            for (var k in oldObj) {
+                //判断数据类型
+                //首先先获取属性值才可以判断 属性值是oldObj[k]
+                var item = oldObj[k];
+                if (item instanceof Array) { //数组也是一个属性所以要将数组卸写在属性的上面
+                    newObj[k] = [];
+                    deepCopy(newObj[k], item); //item 是属性值而newObj是属性名
+
+                } else if (item instanceof Object) {
+                    newObj[k] = {};
+                    deepCopy(newObj[k], item)
+                } else {
+                    newObj[k] = item;
+                }
+            }
+
+        }
+        deepCopy(o, obj);
+        console.log(o);
+        // o.msg.age = 22;
+        // console.log(o);
+        // console.log(obj);
+    </script>
+
+</body>
+
+</html>

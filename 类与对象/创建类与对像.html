@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Star { //创建一个类 constructor是构造函数
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+        }
+        var andy = new Star('andy', 20);
+        console.log(andy.uname);
+        console.log(andy.age);
+
+
+
+        //类中的继承
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sing() {
+                // console.log('sing');
+                return 'sing'
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            constructor(x, y) {
+                //super  会调用父类的构造函数
+                super(x, y); //super 必须调用在子类的this之前
+                this.x = x;
+                this.y = y;
+            }
+            sing() {
+                console.log(super.sing() + '  son de sing');
+            }
+            subtract(x, y) {
+                console.log(this.y - this.x);
+
+            }
+
+        }
+        var son = new Son(1, 2);
+        son.sing();
+        son.sum();
+        son.subtract();
+    </script>
+
+</body>
+
+</html>

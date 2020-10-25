@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(uname, age) {
+            this.uname = uname;
+            this.age = age;
+
+
+        }
+
+        function Son(uname, age, scroll) {
+            this.scroll = scroll;
+            Father.call(this, uname, age) //利用call将this指向子类 从而达到借用父类构造函数的属性
+
+        }
+        var son = new Son('andy', 10, 100);
+        console.log(son);
+    </script>
+
+</body>
+
+</html>

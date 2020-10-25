@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <script>
+        function contDown(time) {
+            var nowTime = +new Date(); //当时的总毫秒数
+            var inputTime = +new Date(time); //用户输入的哪天的总毫秒数
+            var times = (inputTime - nowTime) / 1000; //相差的秒数 一秒=一千毫秒
+
+            var y = parseInt(times / 60 / 60 / 24 / 365);
+            y = y < 10 ? '0' + y : y;
+            // var d = parseInt(times / 60 / 60 / 24 - y * 365);
+            var d = parseInt(times / 60 / 60 / 24 % 365);
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            // return  d + '天' + h + '时' + m + '分' + s + '秒'; //没有年的
+            return y + '年' + d + '天' + h + '时' + m + '分' + s + '秒'; //有年的
+
+        }
+        console.log(contDown('2025-9-18 20:30:00'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

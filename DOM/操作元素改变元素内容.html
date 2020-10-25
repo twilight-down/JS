@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示当前时间</button>
+    <div>此处显示</div>
+    <p>123</p>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        btn.onclick = function() {
+            div.innerText = gettimer();
+        }
+        p.innerText = gettimer(); //不添加事件直接显示的放法 但是需要获取事件源
+
+
+        function gettimer() {
+            var myDate = new Date();
+            // console.log(myDate);
+            // console.log(myDate.getFullYear());
+            // console.log(myDate.getMonth() + 1);
+            // console.log(myDate.getDate());
+
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth() + 1;
+            var days = myDate.getDate();
+            var day = myDate.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', ];
+            // console.log('今天是' + year + '年' + month + '月' + days + '日 ' + arr[day]);
+            return '今天是' + year + '年' + month + '月' + days + '日 ' + arr[day];
+
+        }
+    </script>
+
+</body>
+
+</html>

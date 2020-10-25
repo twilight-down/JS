@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Start(uname, age) {
+            this.uname = uname;
+            this.age = age;
+
+        }
+        Start.prototype = {
+            constructor: Start, //如果我们修改了原来的原型对象，给原型对象赋值的是一个对象，那么我们就需要手动的利用constructor指回原来的构造函数
+            sing: function() {},
+            dancing: function() {},
+        }
+
+        var andy = new Start('andy', 16);
+        var anna = new Start('anna', 18);
+        console.log(Start.prototype);
+        console.log(andy.__proto__);
+        console.log(Start.prototype.constructor);
+        console.log(andy.__proto__.constructor);
+        console.log(Start.prototype.constructor === andy.__proto__.constructor);
+    </script>
+
+</body>
+
+</html>

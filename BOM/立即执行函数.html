@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        ////立即执行函数的第一种写法
+        (function sum(a, b) { //可以给函数起名字 也可以去掉sum
+            console.log(a + b);
+        })(1, 2); //小括号可以是看做调用函数
+
+        ////
+        (function output(c) { //可以给函数起名字 同理可以去掉output
+            console.log(c);
+        }(1)); //后面那个括号传递参数
+    </script>
+
+</body>
+
+</html>

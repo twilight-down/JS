@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var age = 19;
+        var obj = { //对象不能产生作用域 所以this指向的是window 而window没有age属性所以会undefined 当我们在全局定义了一个age后就可以输出了
+            age: 10,
+            say: () => {
+                alert(this.age)
+            }
+        };
+        obj.say();
+    </script>
+</body>
+
+</html>

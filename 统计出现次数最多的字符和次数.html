@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'sasfhasgauwfyvdawbijagusf';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+
+
+        // console.log(o);
+        // for (k in o) {
+        //     console.log(k);
+        //     console.log(o[k]);
+        // }
+
+        var max = 0;
+        var ch = '';
+
+        console.log(o);
+        for (k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+
+        }
+        console.log('出现最多次数是： ' + max);
+        console.log('这个字符就是： ' + ch);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

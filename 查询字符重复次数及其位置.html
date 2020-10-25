@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //////根据字符返回位置
+        var str = 'asdajksfnambslubdasdaksna';
+        var index = str.indexOf('s');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = str.indexOf('s', index + 1);
+        }
+        console.log('“s”出现的次数是 ' + num);
+        //////////
+
+        ///////根据位置返回字符    
+        var chr = 'andy';
+        console.log(chr.charAt(3));
+        for (i = 0; i < chr.length; i++) {
+            console.log(chr.charAt(i));
+        }
+
+
+        //////charCodeAt(index) 根据位置返回ASCII码 目的为判断用户按下了那个键
+        var chr = 'andy';
+        console.log(chr.charCodeAt(3));
+        for (i = 0; i < chr.length; i++) {
+            console.log(chr.charCodeAt(i));
+        }
+
+        ///////s str[index] H5新增
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

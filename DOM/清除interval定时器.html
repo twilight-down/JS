@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="start">开启</button>
+    <button class="stopp">停止</button>
+    <script>
+        var stopp = document.querySelector('.stopp');
+        var start = document.querySelector('.start');
+
+        var timmer = null;
+        start.addEventListener('click', function() {
+                // debugger
+                clearInterval(timmer); // !解决多次点击会导致无法停止的问题!
+                console.log(timmer);
+                timmer = setInterval(function() {
+                    console.log(2);
+                }, 100);
+            })
+            // console.log(timmer);
+        stopp.addEventListener('click', function() {
+            // debugger
+            console.log(timmer);
+            clearInterval(timmer);
+        })
+    </script>
+</body>
+
+</html>

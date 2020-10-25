@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            border: 1px solid #ccc;
+        }
+        
+        span {
+            position: absolute;
+            top: 400px;
+            width: 300px;
+            height: 150px;
+            background-color: plum;
+        }
+        
+        .btn500 {
+            background-color: cyan;
+        }
+        
+        .btn000 {
+            background-color: cyan;
+        }
+        
+        .btn800 {
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <button class="btn500">点击运行动画至500</button>
+    <button class="btn800">点击运行动画至800</button>
+    <button class="btn000">点击运行动画至000</button>
+
+
+
+    <script>
+        //var obj={};
+        //obji.name='andy';
+
+
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        var btn000 = document.querySelector('.btn000');
+
+
+
+        function animate(obj, target, callback) { //封装函数
+            clearInterval(obj.timmer); //避免多次点击按钮导致动画运行多个定时器  清除以前的定时器只保留当前这一个定时器
+            obj.timmer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10; //计算步长使动画达到减速效果   同时避免出现小数的情况
+                step = step > 0 ? Math.ceil(step) : Math.floor(step); //避免距离是负值的时候向上取整无法回到原来的位置
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timmer);
+                    if (callback) {
+                        callback();
+                    } //  ======  callback&&calback(); 短路运算 和上面的if完全等价 并且更加节省代码行
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15);
+        }
+        animate(div, 400);
+        btn500.addEventListener('click', function() {
+            animate(span, 500, function() {
+                span.style.backgroundColor = 'skyblue';
+            });
+
+        });
+        btn800.addEventListener('click', function() {
+            animate(span, 800, function() {
+                span.style.backgroundColor = 'orange';
+            });
+
+        });
+        btn000.addEventListener('click', function() {
+            animate(span, 0, function() {
+                span.style.backgroundColor = 'green';
+            });
+
+        })
+
+
+        //匀速运动 盒子当前位置加上一个固定的值
+        //缓动运动 盒子当前的位置加上一个递减的值
+    </script>
+
+</body>
+
+</html>

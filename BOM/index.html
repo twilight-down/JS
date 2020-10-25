@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var param = location.search.substr(1); //截取数组 从第i个开始 第二个参数不写就是默认把后面的全部截取下来
+        console.log(param);
+        var arr = param.split('='); //利用split将字符串切割为数组  split('=')
+        console.log(arr);
+        var div = document.querySelector('div');
+        div.innerHTML = 'hello welcome back     ' + arr[1]; //将数据写入div中
+    </script>
+</body>
+
+</html>
